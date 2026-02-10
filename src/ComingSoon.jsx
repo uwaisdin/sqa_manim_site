@@ -43,7 +43,7 @@ const sections = [
 
         <div className="absolute top-0 left-0 z-10 text-white p-6 max-w-4xl">
           <h1 className="text-3xl font-semibold text-gray-300 mb-4">National 5: Contents</h1>
-          <p className="text-base text-gray-200 mb-6">Click a lesson to scroll down.</p>
+          <p className="text-base text-gray-200 mb-6">Some lessons I am working on<br />Click a lesson to scroll down. </p>
 
           {/* Square Grid Links */}
           <div className="grid grid-cols-2 gap-4">

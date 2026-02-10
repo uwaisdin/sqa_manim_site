@@ -19,6 +19,7 @@ function HamburgerMenu() {
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
     >
+      {/* Hamburger + Menu text */}
       <div
         onClick={toggleClick}
         className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity"
@@ -27,9 +28,14 @@ function HamburgerMenu() {
           <span className="block w-7.5 h-0.5 bg-white rounded-full transition-all"></span>
           <span className="block w-7.5 h-0.5 bg-white rounded-full transition-all"></span>
         </div>
-        <span className="text-xl font-medium tracking-wide">Menu</span>
+
+        {/* Hide "Menu" text on small screens */}
+        <span className="hidden sm:inline text-xl font-medium tracking-wide">
+          Menu
+        </span>
       </div>
 
+      {/* Dropdown Menu */}
       <div
         className={`absolute right-6 mt-3 bg-white text-black rounded-xl shadow-xl overflow-hidden transition-all duration-300 ease-out origin-top-right
           ${isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'}
@@ -72,3 +78,4 @@ function HamburgerMenu() {
 }
 
 export default HamburgerMenu;
+
