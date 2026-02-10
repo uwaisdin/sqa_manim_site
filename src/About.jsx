@@ -22,7 +22,7 @@ export default function About() {
       </h1>
 
       {/* Paragraph left-aligned, wider */}
-      <p className="text-base md:text-lg leading-relaxed text-gray-200 max-w-5xl">
+      <p className="text-sm md:text-lg leading-relaxed text-gray-200 max-w-5xl">
         I’m Uwais, an Electronic and Electrical Engineering graduate with a passion for sharing the beauty of mathematics and physics. Over the years, I’ve helped students gain confidence and clarity in their studies, turning complex concepts into engaging, intuitive lessons. My teaching blends rigorous understanding with visual and creative methods, ensuring that every student not only solves problems but truly understands the underlying ideas. When I’m not tutoring, I enjoy exploring science, philosophy, and the way the world works — and I bring that curiosity into every lesson. My goal is to inspire a love for learning, nurture critical thinking, and help students unlock their full potential.
       </p>
 

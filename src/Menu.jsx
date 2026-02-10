@@ -1,23 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 function HamburgerMenu() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [hovering, setHovering] = useState(false);
+  const menuRef = useRef(null);
 
-  const handleEnter = () => setHovering(true);
-  const handleLeave = () => {
-    setTimeout(() => setHovering(false), 200);
-  };
+  // Click outside handler
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside); // For mobile
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, []);
 
   const toggleClick = () => setMenuOpen(!menuOpen);
-  const isOpen = menuOpen || hovering;
 
   return (
     <div
+      ref={menuRef}
       className="absolute top-0 right-0 z-30 p-6 text-white"
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
     >
       {/* Hamburger + Menu text */}
       <div
@@ -29,7 +39,6 @@ function HamburgerMenu() {
           <span className="block w-7.5 h-0.5 bg-white rounded-full transition-all"></span>
         </div>
 
-        {/* Hide "Menu" text on small screens */}
         <span className="hidden sm:inline text-xl font-medium tracking-wide">
           Menu
         </span>
@@ -38,7 +47,7 @@ function HamburgerMenu() {
       {/* Dropdown Menu */}
       <div
         className={`absolute right-6 mt-3 bg-white text-black rounded-xl shadow-xl overflow-hidden transition-all duration-300 ease-out origin-top-right
-          ${isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'}
+          ${menuOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'}
         `}
         style={{ minWidth: '180px' }}
       >
@@ -70,7 +79,6 @@ function HamburgerMenu() {
               National 5
             </Link>
           </li>
-          {/* Add more links here if needed */}
         </ul>
       </div>
     </div>
