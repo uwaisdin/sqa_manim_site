@@ -34,7 +34,7 @@ function Home() {
               <img
                 src="/Uwais.JPG"
                 alt="Uwais - Tutor"
-                className="w-20 h-20 md:w-55 md:h-55 rounded-full object-cover"
+                className="w-22 h-22 md:w-55 md:h-55 rounded-full object-cover"
               />
 
               {/* Text on the right for mobile */}
@@ -79,7 +79,7 @@ function Home() {
             {/* Animation Box */}
             <div className="bg-gray-900 rounded-2xl shadow-lg p-4 flex-1 h-60 md:h-80 md:h-150">
               <h3 className="text-white text-xs md:text-lg mb-2 text-center md:text-left">
-                I am to provide a strong intuition and sound understanding
+                I am to provide a strong intuition and understanding
               </h3>
               <video
                 className="w-full flex-2 rounded-lg object-cover"
