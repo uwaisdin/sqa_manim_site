@@ -21,50 +21,64 @@ function Home() {
       <HamburgerMenu />
 
       <div className="absolute top-0 left-0 z-10 text-white p-4">
-        <h2 className="text-xl md:text-3xl font-medium mt-2 text-gray-300">
+        <h2 className="text-l md:text-3xl font-medium mt-2 text-gray-300">
           Maths and Physics Tutoring
         </h2>
 
         <div className="mt-12 flex flex-col md:flex-row gap-10 items-start">
-          {/* Left Card with Bigger Picture */}
-          <div className="bg-gray-900 rounded-2xl shadow-lg p-6 max-w-sm text-center">
-            <img
-              src="/Uwais.JPG"
-              alt="Uwais - Tutor"
-              className="w-55 h-55 rounded-full object-cover mx-auto mb-4"
-            />
-              <p className="text-white mb-2 font text-lg font-medium">
-                IET Prize Winner — Top Graduate<br />
-                First-Class Engineering Degree
+          {/* Left Card with Text + Picture */}
+          <div className="bg-gray-900 rounded-2xl shadow-lg p-4 max-w-sm flex flex-col md:flex-col md:text-center md:items-center">
+            {/* Container for image + text */}
+            <div className="flex flex-row md:flex-col items-center gap-4">
+              {/* Image first */}
+              <img
+                src="/Uwais.JPG"
+                alt="Uwais - Tutor"
+                className="w-20 h-20 md:w-55 md:h-55 rounded-full object-cover"
+              />
+
+              {/* Text on the right for mobile */}
+              <div className="flex flex-col text-left md:text-center">
+                <p className="text-white mb-2 text-xs md:text-lg font-medium">
+                  IET Prize Winner — Top Graduate<br />
+                  First-Class Engineering Degree
+                </p>
+
+                <p className="text-gray-300 mb-2 text-xs md:text-lg font-medium">
+                  National 5 & Higher Maths and Physics
+                </p>
+              </div>
+            </div>
+
+            {/* Pricing + Contact Info Side by Side on Mobile */}
+            <div className="flex flex-row md:flex-col justify-between mt-4 gap-4 w-full">
+              {/* Pricing */}
+              <p className="text-gray-300 text-xs md:text-lg font-medium">
+                Pricing: <br />
+                £20/hour online<br />
+                £25/hour in person
               </p>
-            <p className="text-gray-300 mb-2 text-lg font-medium">
-              National 5 & Higher Maths and Physics
-            </p>
-            <p className="text-gray-300 mt-4 text-lg font-medium">
-              Pricing: <br />
-              £20/hour online<br />
-              £25/hour in person
-            </p>
-            <div className="text-white mt-5 text-lg font-medium flex flex-col items-center gap-2">
-            <p className="text-center">Get in touch:</p>
-            <span className="flex items-center gap-2">
-              <FaPhone className="text-gray-300" />
-              07557051092
-            </span>
-            
-            <span className="flex items-center gap-2">
-              <FaEnvelope className="text-gray-300" />
-              uwaisdin7@gmail.com
-            </span>
-          </div>
+
+              {/* Contact info */}
+              <div className="text-white text-xs md:text-lg font-medium flex flex-col items-start md:items-center gap-1">
+                <p>Get in touch:</p>
+                <span className="flex items-center gap-2">
+                  <FaPhone className="text-gray-300" />
+                  07557051092
+                </span>
+                <span className="flex items-center gap-2">
+                  <FaEnvelope className="text-gray-300" />
+                  uwaisdin7@gmail.com
+                </span>
+              </div>
+            </div>
           </div>
 
           {/* Right Animation Boxes Side by Side */}
           <div className="flex-1 flex flex-row gap-4">
-
-            {/* Second Animation (Placeholder) */}
-            <div className="bg-gray-900 rounded-2xl shadow-lg p-4 flex-1 h-80 md:h-150">
-            <h3 className="text-white text-lg mb-2 text-center md:text-left">
+            {/* Animation Box */}
+            <div className="bg-gray-900 rounded-2xl shadow-lg p-4 flex-1 h-60 md:h-80 md:h-150">
+              <h3 className="text-white text-xs md:text-lg mb-2 text-center md:text-left">
                 I am to provide a strong intuition and sound understanding
               </h3>
               <video
