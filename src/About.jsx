@@ -13,30 +13,30 @@ export default function About() {
   }, []);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        autoPlay
-        loop
-        muted
-        playsInline
-        src={isMobile ? "/ymxc.mp4" : "/ymxc.mp4"}
-        type="video/mp4"
-      />
-
+    <div className="relative min-h-screen w-full bg-gray-1000 flex flex-col items-start p-6 gap-8">
       <HamburgerMenu />
 
-      <div className="absolute top-0 left-0 z-10 text-white p-6 max-w-md">
-        <h1 className="text-2xl font-semibold text-gray-300 mb-4">About Us</h1>
-        <p className="text-base leading-relaxed text-gray-200">
-          Hi, I am Uwais. The creator of this platform. My sole goal in life
-           is to try to make the world a better place. I think maths is the most
-           power tool us humans have access to, and I want to make it
-           accessible for all.
-        </p>
-        <p className="mt-4 text-sm text-gray-400">
-          This page works seamlessly on desktop and mobile devices.
-        </p>
+      {/* Title in top-left */}
+      <h1 className="text-3xl md:text-4xl font-semibold text-gray-300">
+        About Me
+      </h1>
+
+      {/* Paragraph left-aligned, wider */}
+      <p className="text-base md:text-lg leading-relaxed text-gray-200 max-w-5xl">
+        I’m Uwais, an Electronic and Electrical Engineering graduate with a passion for sharing the beauty of mathematics and physics. Over the years, I’ve helped students gain confidence and clarity in their studies, turning complex concepts into engaging, intuitive lessons. My teaching blends rigorous understanding with visual and creative methods, ensuring that every student not only solves problems but truly understands the underlying ideas. When I’m not tutoring, I enjoy exploring science, philosophy, and the way the world works — and I bring that curiosity into every lesson. My goal is to inspire a love for learning, nurture critical thinking, and help students unlock their full potential.
+      </p>
+
+      {/* Animation / Video Box */}
+      <div className="bg-gray-900 rounded-2xl shadow-lg overflow-hidden">
+        <video
+          className="w-full h-auto max-h-[325px] md:max-h-[425px] object-contain rounded-2xl"
+          autoPlay
+          loop
+          muted
+          playsInline
+          src="/math_bg.mp4"
+          type="video/mp4"
+        />
       </div>
     </div>
   );
